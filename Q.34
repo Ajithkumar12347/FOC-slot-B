@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo "Enter marks of five subjects: "
+read sub1 sub2 sub3 sub4 sub5
+
+total=$((sub1 + sub2 + sub3 + sub4 + sub5))
+percentage=$((total / 5))
+
+if [ $percentage -ge 90 ]
+then
+   grade="A"
+elif [ $percentage -ge 80 ]
+then
+   grade="B"
+elif [ $percentage -ge 70 ]
+then
+   grade="C"
+elif [ $percentage -ge 60 ]
+then
+   grade="D"
+else
+   grade="F"
+fi
+
+echo "Total marks: $total"
+echo "Percentage: $percentage"
+echo "Grade: $grade"
