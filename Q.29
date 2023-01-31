@@ -1,0 +1,29 @@
+#!/bin/bash
+
+echo "Choose the shape to calculate its area:"
+echo "1. Rectangle"
+echo "2. Triangle"
+echo "3. Circle"
+echo "4. Exit"
+read -p "Enter your choice (1-4): " choice
+
+case $choice in
+  1)  read -p "Enter width: " width
+      read -p "Enter height: " height
+      area=$(($width * $height))
+      echo "Area of rectangle: $area"
+      ;;
+  2)  read -p "Enter base: " base
+      read -p "Enter height: " height
+      area=$(($base * $height / 2))
+      echo "Area of triangle: $area"
+      ;;
+  3)  read -p "Enter radius: " radius
+      area=$(echo "3.14 * ($radius ^ 2)" | bc)
+      echo "Area of circle: $area"
+      ;;
+  4)  exit
+      ;;
+  *)  echo "Invalid option"
+      ;;
+esac
