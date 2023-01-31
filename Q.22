@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <math.h>
+
+void decToOctal(int decimal) {
+  int octal[100], i = 0;
+
+  while (decimal != 0) {
+    octal[i] = decimal % 8;
+    decimal /= 8;
+    i++;
+  }
+
+  printf("Octal = ");
+  for (i = i - 1; i >= 0; i--) {
+    printf("%d", octal[i]);
+  }
+}
+
+int main() {
+  int decimal;
+
+  printf("Enter a decimal number: ");
+  scanf("%d", &decimal);
+
+  decToOctal(decimal);
+
+  return 0;
+}
