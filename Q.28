@@ -1,0 +1,7 @@
+#!/bin/bash
+
+read -p "Enter a number: " num
+
+result=$((num * num * num))
+
+echo "The cube of $num is $result"
